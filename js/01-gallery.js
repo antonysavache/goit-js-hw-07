@@ -18,12 +18,12 @@ galleryItems.forEach(
 
         ashka.addEventListener('click',(event)=>{
             event.preventDefault();
-            const instance = basicLightbox.create(`<img src="${imgshka.dataset.source}" width="100%" height="100%">`, {
-            onShow: (instance) => {
-                instance.element().querySelector('img').onclick = instance.close
-            }
+            const instance = basicLightbox.create(
+                `<img src="${imgshka.dataset.source}" width="100%" height="100%">`)
+                
+                instance.show()
         })
-        instance.show()
+
 
         window.addEventListener('keydown', (event)=>{
             event.code === 'Escape'
