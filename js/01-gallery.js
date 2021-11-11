@@ -20,22 +20,19 @@ galleryItems.forEach(
             event.preventDefault();
             const instance = basicLightbox.create(
                 `<img src="${imgshka.dataset.source}" width="100%" height="100%">`)
-                
                 instance.show()
+                window.addEventListener('keydown', (event)=>{
+                    event.code === 'Escape'
+                    instance.close()
+                })
         })
+        
 
 
-        window.addEventListener('keydown', (event)=>{
-            event.code === 'Escape'
-            instance.close()
-        })
-        })
 
         ashka.append(imgshka);
         galereya.append(ashka)
-
-    }
-)
+        })
 
 
 
